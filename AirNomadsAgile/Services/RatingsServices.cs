@@ -4,49 +4,55 @@ using System.Linq;
 using System.Web;
 using AirNomadsAgile.Data;
 using AirNomadsAgile.Models.Movies;
+using AirNomadsAgile.Models.Ratings;
+using AirNomadsAgile.Models.Shows;
 
 namespace AirNomadsAgile.Services
 {
-    public class MovieService
+    public class RatingsServices
     {
+
         private readonly Guid _userId;
 
-        public MovieService(Guid userId)
+        public RatingsServices(Guid userId)
         {
             _userId = userId;
         }
         // CRUD methods go below
 
         // Read
-        public IEnumerable<MovieListItem> GetAllMovies()
+        public IEnumerable<RatingsListItem> GetAllRatings()
         {
-            using (var ctx = new ApplicationDbContext())
+            using (var ctx = new Data.ApplicationDbContext())
             {
-                var movieList = ctx.Movies.Select(m => new MovieListItem()
+                var showList = ctx.Ratings.Select(m => new RatingsListItem()
                 {
                     Id = m.Id,
-                    Title = m.Title,
+                    StarRating = m.StarRating,
                 }).ToList();
-                return movieList;
+                return showList;
             }
         }
 
-        public MovieGetById GetMovieById(int id)
+        public RatingsGetById GetRatingById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Movies
+                        .Ratings
                         .Single(e => e.Id == id);
                 return
-                    new MovieGetById
+                    new RatingsGetById()
                     {
                         Id = entity.Id,
-                        Title = entity.Title,
-                        Description = entity.Description
+                        StarRating = entity.StarRating
                     };
             };
         }
+
+
+
+
     }
 }
