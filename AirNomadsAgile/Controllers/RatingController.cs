@@ -9,5 +9,9 @@ namespace AirNomadsAgile.Controllers
 {
     public class RatingController : ApiController
     {
+        public async Task<IHttpActionResult> AddRating()
+        {
+          
+        }
     }
 }
