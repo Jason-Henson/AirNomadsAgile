@@ -7,5 +7,6 @@ namespace AirNomadsAgile.Models
 {
     public class Movie
     {
+        
     }
 }
