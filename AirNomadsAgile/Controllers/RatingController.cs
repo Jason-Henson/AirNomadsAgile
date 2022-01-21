@@ -9,5 +9,6 @@ namespace AirNomadsAgile.Controllers
 {
     public class RatingController : ApiController
     {
+
     }
 }
