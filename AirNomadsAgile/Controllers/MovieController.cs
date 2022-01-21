@@ -16,7 +16,7 @@ namespace AirNomadsAgile.Controllers
         private readonly ApplicationDbContext _dbContext = new ApplicationDbContext();
 
         [HttpPost]
-        public async Task<IHttpActionResult> AddMovie(Item_Create model)
+        public async Task<IHttpActionResult> AddMovie(MovieCreate model)
         {
             if (!ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace AirNomadsAgile.Controllers
 
             _dbContext.Movies.Remove(movie);
 
-            if (await _dbContext.Movies.SaveChangesAsync() == 1)
+            if (await _dbContext.SaveChangesAsync() == 1)
             {
                 return Ok();
             }

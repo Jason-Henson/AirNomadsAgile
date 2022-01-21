@@ -79,7 +79,7 @@ namespace AirNomadsAgile.Controllers
 
             _dbContext.Movies.Remove(show);
 
-            if (await _dbContext.Movies.SaveChangesAsync() = 1)
+            if (await _dbContext.SaveChangesAsync() == 1)
             {
                 return Ok();
             }
