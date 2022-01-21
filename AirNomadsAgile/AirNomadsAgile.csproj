@@ -310,10 +310,18 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Movies\MovieCreate.cs" />
+    <Compile Include="Models\Movies\MovieGetById.cs" />
     <Compile Include="Models\Movies\MovieEdit.cs" />
     <Compile Include="Models\Movies\MovieListItem.cs" />
+    <Compile Include="Models\Ratings\RatingLIstAll.cs" />
+    <Compile Include="Models\Ratings\RatingsGetById.cs" />
+    <Compile Include="Models\Ratings\RatingsListItem.cs" />
+    <Compile Include="Models\Shows\ShowGetById.cs" />
+    <Compile Include="Models\Shows\ShowsListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\MovieService.cs" />
+    <Compile Include="Services\RatingsServices.cs" />
+    <Compile Include="Services\ShowServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -368,8 +376,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\Ratings\" />
-    <Folder Include="Models\Shows\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
