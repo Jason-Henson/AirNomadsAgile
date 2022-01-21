@@ -11,13 +11,22 @@ namespace AirNomadsAgile.Data
     {
         [Key]
         public int Id { get; set; }
+
         [Required]
         public string Title { get; set; }
+
         [Required]
         public string Description { get; set; }
+
         [ForeignKey(nameof(Rating))]
         public int? RatingId { get; set; }
+
         public Rating Rating { get; set; }
+
+        Movie()
+        {
+         
+        }
 
     }
 }
